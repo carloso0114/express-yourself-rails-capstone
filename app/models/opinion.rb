@@ -1,5 +1,5 @@
 class Opinion < ApplicationRecord
-  #belongs_to :User
+  # belongs_to :User
   belongs_to :author, class_name: 'User'
 
   validates :author_id, presence: true

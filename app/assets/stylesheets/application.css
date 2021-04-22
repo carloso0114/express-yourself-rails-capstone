@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.blue-like-tw {
+    background-color: #55AAEB;
+}

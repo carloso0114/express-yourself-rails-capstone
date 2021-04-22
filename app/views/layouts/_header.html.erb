@@ -1,17 +1,19 @@
-<nav class="navbar mb-2">
+<nav class="navbar navbar-expand blue-like-tw" aria-label="Second navbar example">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to "Items", root_path, class: "mx-2" %>
-    </div>
-    <% if logged_in? %>
-      <ul class="nav navbar-right ">
-        <li><%= link_to "Log out", logout_path, class: "mx-2", method: :delete %></li> 
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li><%= link_to "Home", root_path, class: "mx-2" %></li>
       </ul>
-    <% else %>
+      <% if logged_in? %>
       <ul class="nav navbar-right ">
-        <li><%= link_to "Log in", login_path, class: "mx-2" %></li> 
+        <li><%= link_to "Log out", logout_path, class: "mx-2", method: :delete %></li>
+      </ul>
+      <% else %>
+      <ul class="nav navbar-right ">
+        <li><%= link_to "Log in", login_path, class: "mx-2" %></li>
         <li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>
       </ul>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </nav>

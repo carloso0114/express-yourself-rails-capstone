@@ -43,9 +43,7 @@ a {
 }
 
 #content {
-    overflow-y: auto;
-    height: 100vh;
-    padding-bottom: 5rem;
+
 }
   
 @media (max-width: 768px) {

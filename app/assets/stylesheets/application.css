@@ -14,6 +14,46 @@
  *= require_self
  */
 
-.blue-like-tw {
-    background-color: #55AAEB;
+:root {
+    --grey: #E1E8ED;
+    --blue: #1DA1F2;
+    --dark: #14171A;
 }
+
+a {
+    color: var(--grey) !important;
+}
+
+.bg-navbar { background-color: var(--blue) !important; }
+
+.bg-sidebar { background-color: var(--dark) !important; }
+
+.bg-grey { background-color: var(--grey) !important; }
+
+#sidebar-container {
+    min-height: 100vh;
+}
+  
+#sidebar-container .logo{
+    padding: 0.875rem 1.25rem;
+}
+  
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+  
+@media (max-width: 768px) {
+    #sidebar-container {
+      display: none;
+    }
+    .stat {
+        border: 0;
+    }
+  }
+  

@@ -1,0 +1,11 @@
+  <div>
+    <div class='post-attribution' >
+      <%= link_to opinion.user, user_path(opinion.user), class: 'post-author' %>
+    </div>
+    <div class='post-liking'>
+      <span class='post-date'> <%= opinion.created_at.strftime("%Y/%m/%d") %> </span> <br>
+    </div>
+  </div>
+  <p class="post-content">
+    <%= opinion.text %>
+  </p>

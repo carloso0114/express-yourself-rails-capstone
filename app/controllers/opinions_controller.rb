@@ -3,6 +3,8 @@ class OpinionsController < ApplicationController
 
   def home
     @user = current_user
+    @opinion = Opinion.new
+    opinions_posts
   end
 
   def create
@@ -18,7 +20,7 @@ class OpinionsController < ApplicationController
   private
 
   def opinions_posts
-    @opinions_posts ||= current_user.follow_and_own_posts.ordered_by_most_recent.includes(:user)
+    @opinions_posts ||= current_user.follow_and_own_opinions.order("created_at DESC")
   end
 
   def opinion_params

@@ -1,10 +1,13 @@
 class User < ApplicationRecord
-  has_many :opinions
+  has_many :opinions, foreign_key: 'author_id'
 
-  # has_many :following
-  has_many :followers1, class_name: 'Following'
-  has_many :followed1, class_name: 'Following'
+  has_many :followings, foreign_key: 'follower_id'
+  has_many :followers,  class_name: 'Following', foreign_key: 'followed_id'
 
   validates :username, presence: true, uniqueness: true
   validates :fullname, presence: true
+
+  def follow_and_own_opinions
+    Opinion.where(author_id: followings + [self])
+  end
 end

@@ -1,12 +1,9 @@
 class OpinionsController < ApplicationController
   before_action :logged_in_user
 
-  def new
-    @opinion = Opinion.new(opinion_params)
-  end
-
   def index
-    @opinion = Opinion.all
+    @opinion = Opinion.new
+    opinions_posts
   end
 
   def create
@@ -20,6 +17,10 @@ class OpinionsController < ApplicationController
   end
 
   private
+
+  def opinions_posts
+    @opinions_posts ||= current_user.follow_and_own_posts.ordered_by_most_recent.includes(:user)
+  end
 
   def opinion_params
     params.permit(:author_id, :text)

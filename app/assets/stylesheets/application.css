@@ -21,7 +21,7 @@
 }
 
 a {
-    color: var(--grey) !important;
+    color: var(--dark) !important;
 }
 
 .bg-navbar { background-color: var(--blue) !important; }

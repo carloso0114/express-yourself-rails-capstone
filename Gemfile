@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # User Hirb to enhance console views
 gem 'hirb', '~> 0.7.3'
+# Use cloudinary to host profile pics
+gem 'cloudinary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -1,9 +1,8 @@
 class OpinionsController < ApplicationController
   before_action :logged_in_user
 
-  def index
-    @opinion = Opinion.new
-    opinions_posts
+  def home
+    @user = current_user
   end
 
   def create

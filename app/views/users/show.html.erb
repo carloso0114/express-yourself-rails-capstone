@@ -1,10 +1,13 @@
 <div class="row">
   <div class="offset-4 col-md-4">
-      <h3 class='text-center'>
-        <%= @user.username %>
-      </h3>
-      <h3 class='text-center'>
-        <%= @user.fullname %>
-      </h3>
+    <h3 class='text-center'>
+      <%= @user.username %>
+    </h3>
+    <h3 class='text-center'>
+      <%= @user.fullname %>
+      <% if @user.avatar.attached? %>
+      <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
+      <% end %>
+    </h3>
   </div>
 </div>

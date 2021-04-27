@@ -1,8 +1,10 @@
 <div class="d-flex justify-content-around m-5">
     <div>
-    <% if user.avatar.attached? %>
-    <%= cl_image_tag user.avatar.key, :width=>50, :crop=>"fill" %>
-    <% end %>
+        <% if user.avatar.attached? %>
+        <%= cl_image_tag(@user.avatar.key, :width=>70, :height=>70, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto) %>
+        <% else %>
+        <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif", :width=>70, :height=>70, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto, :type=>"fetch") %>
+        <% end %>
     </div>
     <div class="">
     <h6><%= link_to user.fullname, user_path(user.id), class: 'post-author' %></h6>

@@ -3,6 +3,7 @@ class OpinionsController < ApplicationController
 
   def home
     @user = current_user
+    @test = User.all
     @opinion = Opinion.new
     opinions_posts
     suggest_people

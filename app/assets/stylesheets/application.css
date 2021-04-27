@@ -36,20 +36,8 @@ body {
 
 .bg-grey { background-color: var(--grey) !important; }
 
-#sidebar-container {
+.sidebar-container {
     min-height: 100vh;
-}
-  
-#sidebar-container .logo{
-    padding: 0.875rem 1.25rem;
-}
-  
-#sidebar-container .menu {
-    width: 18rem;
-}
-
-#content {
-
 }
   
 @media (max-width: 768px) {

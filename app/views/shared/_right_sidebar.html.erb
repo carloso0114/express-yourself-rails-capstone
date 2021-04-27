@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col-3">
     <div class="text-center">
         <% if @user2.avatar.attached? %>
         <%= cl_image_tag(@user2.avatar.key, :width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto) %>

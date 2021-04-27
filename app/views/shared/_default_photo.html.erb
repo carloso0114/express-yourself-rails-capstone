@@ -1,0 +1,5 @@
+<% if @user.avatar.attached? %>
+<%= cl_image_tag(@user.avatar.key, :width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto) %>
+<% else %>
+<%= cl_image_tag("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif", :width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto, :type=>"fetch") %>
+<% end %>

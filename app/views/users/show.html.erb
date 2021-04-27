@@ -8,9 +8,7 @@
         <br>
         @<%= @user.username%>
         <br>
-        <% if @user.avatar.attached? %>
-        <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
-        <% end %>
+        <%= render 'shared/default_photo' %>
         <br>
         Following
         <%= @user.followers.count %>
@@ -64,6 +62,8 @@
             <div>
               <% if @user2.cover.attached? %>
               <%= cl_image_tag @user2.cover.key, :width => 1200, :height => 200, :crop=>"fill" %>
+              <% else %>
+              <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg", :width => 1200, :height => 200, :type=>"fetch") %>
               <% end %>
               <h4 class="text-center">Opinions</h4>
               <div>
@@ -80,9 +80,7 @@
           <!-- Who to follow col -->
           <div class="col">
             <div class="text-center">
-              <% if @user2.avatar.attached? %>
-              <%= cl_image_tag @user2.avatar.key, :width=>150, :crop=>"fill" %>
-              <% end %>
+                <%= render 'shared/default_photo2' %>
               <div class='d-flex flex-column w-100'>
                 <div class='d-flex justify-content-center align-items-center flex-column flex-md-row'>
                 </div>

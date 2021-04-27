@@ -8,9 +8,7 @@
         <br>
         @<%= @user.username%>
         <br>
-        <% if @user.avatar.attached? %>
-        <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
-        <% end %>
+          <%= render 'shared/default_photo' %>
         <br>
         Following
         <%= @user.followers.count %>

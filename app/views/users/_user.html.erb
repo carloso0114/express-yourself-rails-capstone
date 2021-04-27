@@ -1,6 +1,11 @@
-<div class="d-flex justify-content-around">
-    <h6><%= link_to user.fullname, user_path(user.id), class: 'post-author' %></h6>
+<div class="d-flex justify-content-around m-5">
+    <div>
+    <% if @user.avatar.attached? %>
+    <%= cl_image_tag user.avatar.key, :width=>100, :crop=>"fill" %>
+    <% end %>
+    </div>
     <div class="">
+    <h6><%= link_to user.fullname, user_path(user.id), class: 'post-author' %></h6>
         <%= form_with url: "/followings", method: :post do |f| %>
         <%= f.hidden_field :follower_id, value: current_user.id %>
         <%= f.hidden_field :followed_id, value: user.id %>

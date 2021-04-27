@@ -4,11 +4,11 @@
   <div id="sidebar-container" class="bg-sidebar">
     <div class="logo">
       <h4 class="text-light font-weight-bold mb-0">
-      <%= @user.fullname%>
-      <br>
-      @<%= @user.username%>
+        <%= @user.fullname%>
+        <br>
+        @<%= @user.username%>
       </h4>
-       <% if @user.avatar.attached? %>
+      <% if @user.avatar.attached? %>
       <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
       <% end %>
     </div>
@@ -52,12 +52,12 @@
           <!-- Tweets col -->
           <div class="col-9">
             <div class="text-center">
-              <h4>Tweets</h4>
+              <h4>What are you thinking?</h4>
               <%= render 'shared/opinion_form' %>
             </div>
             <div>
               <h4>latest opinions</h4>
-                <%= render @opinions_posts %>
+              <%= render @opinions_posts %>
             </div>
           </div>
 
@@ -67,9 +67,9 @@
           <div class="col">
             <div class="text-center">
               <h4>Who to follow</h4>
-                
-                  <%= render @suggest_people %>
-                
+
+              <%= render @suggest_people %>
+
             </div>
           </div>
           <!-- Fin Who to follow col -->

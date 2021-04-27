@@ -1,0 +1,4 @@
+<%= form_with url: "/following", method: :post do |f| %>
+<%= f.hidden_field :author_id, value: current_user.id %>
+<%= f.submit "Follow", class: "mt-2 btn btn-primary" %>
+<% end %>

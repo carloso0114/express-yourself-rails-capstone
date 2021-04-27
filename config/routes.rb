@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :opinions, only: [:new, :create, :index]
   get '/signup', to: 'users#new'
   resources :users
+  resources :followings, only: [:new, :create]
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

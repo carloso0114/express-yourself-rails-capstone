@@ -5,6 +5,7 @@ class OpinionsController < ApplicationController
     @user = current_user
     @opinion = Opinion.new
     opinions_posts
+    suggest_people
   end
 
   def create
@@ -21,6 +22,10 @@ class OpinionsController < ApplicationController
 
   def opinions_posts
     @opinions_posts ||= current_user.follow_and_own_opinions.order("created_at DESC")
+  end
+
+  def suggest_people
+    @people ||= current_user.follow_suggest.order("fullname ASC")
   end
 
   def opinion_params

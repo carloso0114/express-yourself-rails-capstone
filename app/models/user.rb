@@ -5,23 +5,21 @@ class User < ApplicationRecord
   has_one_attached :cover
 
   has_many :followerships, class_name: 'Following', foreign_key: :follower_id
-  has_many :followers, through: :followerships, source: :followed
-
   has_many :inverse_followerships, class_name: 'Following', foreign_key: :followed_id, dependent: :delete_all
+
+  #Who follows you
   has_many :followed_users, through: :inverse_followerships, source: :follower
+
+  #Who you follow
+  has_many :followers, through: :followerships, source: :followed
+  
 
   validates :username, presence: true, uniqueness: true
   validates :fullname, presence: true
 
-  scope :all_but, ->(followed) { where.not(id: followed) }
-
-  # thows a list of users to follow
+  # trhows a list of users to follow
   def follow_suggest
-    User.all_but(self).map { |usr| usr unless following?(usr) }.compact
-  end
-
-  def following?(user)
-    followed_users.include?(user)
+    User.where.not(id: self.followers).where.not(id: self.id)
   end
 
   def follow_and_own_opinions

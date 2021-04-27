@@ -62,6 +62,9 @@
           <!-- Tweets col -->
           <div class="col-9">
             <div>
+              <% if @user2.cover.attached? %>
+              <%= cl_image_tag @user2.cover.key, :width => 1200, :height => 200, :crop=>"fill" %>
+              <% end %>
               <h4 class="text-center">Opinions</h4>
               <div>
                 <%= render @own_opinions %>
@@ -77,7 +80,7 @@
           <!-- Who to follow col -->
           <div class="col">
             <div class="text-center">
-              <% if @user.avatar.attached? %>
+              <% if @user2.avatar.attached? %>
               <%= cl_image_tag @user2.avatar.key, :width=>150, :crop=>"fill" %>
               <% end %>
               <div class='d-flex flex-column w-100'>

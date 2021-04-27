@@ -1,13 +1,92 @@
-<div class="row">
-  <div class="offset-4 col-md-4">
-    <h3 class='text-center'>
-      <%= @user.username %>
-    </h3>
-    <h3 class='text-center'>
-      <%= @user.fullname %>
-      <% if @user.avatar.attached? %>
-      <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
-      <% end %>
-    </h3>
+<div class="d-flex" id="content-wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-container" class="bg-sidebar">
+    <div class="logo">
+      <h4 class="text-light font-weight-bold mb-0">
+        <%= @user.fullname%>
+        <br>
+        @<%= @user.username%>
+        <br>
+        <% if @user.avatar.attached? %>
+        <%= cl_image_tag @user.avatar.key, :width=>150, :crop=>"fill" %>
+        <% end %>
+        <br>
+        Following
+        <%= @user.followers.count %>
+        <br>
+        Followers
+        <%= @user.followed_users.count %>
+        <br>
+        Opinions
+        <%= @user.opinions.count %>
+      </h4>
+    </div>
+    <div class="menu">
+      <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>Home</a>
+    </div>
+  </div>
+  <!-- Fin sidebar -->
+
+  <div class="w-100">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar static-top">
+      <div class="container-fluid">
+
+        <a class="navbar-brand mr-auto" href="">
+          <img src="http://placehold.it/150x50?text=Logo" alt="">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <% if logged_in? %>
+              <%= link_to "Log out", logout_path, class: "mx-2", method: :delete %>
+            </li>
+            <% else %>
+            <li><%= link_to "Log in", login_path, class: "mx-2" %></li>
+            <li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Fin Navbar -->
+
+    <!-- Page Content -->
+    <div id="content" class="bg-grey w-100">
+
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Tweets col -->
+          <div class="col-9">
+            <div class="text-center">
+              <h4>Opinions</h4>
+              
+            </div>
+            <div>
+              <h4>latest opinions</h4>
+              <%= test %>
+            </div>
+          </div>
+
+          <!-- Fin Tweets col -->
+
+          <!-- Who to follow col -->
+          <div class="col">
+            <div class="text-center">
+              <h4>Who to follow</h4>
+
+              
+
+            </div>
+          </div>
+          <!-- Fin Who to follow col -->
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>

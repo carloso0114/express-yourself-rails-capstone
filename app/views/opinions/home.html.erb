@@ -1,60 +1,15 @@
 <div class="d-flex" id="content-wrapper">
-
   <!-- Sidebar -->
-  <div id="sidebar-container" class="bg-sidebar">
-    <div class="logo">
-      <h4 class="text-light font-weight-bold mb-0">
-        <%= @user.fullname%>
-        <br>
-        @<%= @user.username%>
-        <br>
-          <%= render 'shared/default_photo' %>
-        <br>
-        Following
-        <%= @user.followers.count %>
-        <br>
-        Followers
-        <%= @user.followed_users.count %>
-        <br>
-        Opinions
-        <%= @user.opinions.count %>
-      </h4>
-    </div>
-    <div class="menu">
-      <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>Home</a>
-    </div>
-  </div>
+  <%= render 'shared/sidebar_profile' %>
   <!-- Fin sidebar -->
-
+  
   <div class="w-100">
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-navbar static-top">
-      <div class="container-fluid">
-
-        <a class="navbar-brand mr-auto" href="">
-          <img src="http://placehold.it/150x50?text=Logo" alt="">
-        </a>
-
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <% if logged_in? %>
-              <%= link_to "Log out", logout_path, class: "mx-2", method: :delete %>
-            </li>
-            <% else %>
-            <li><%= link_to "Log in", login_path, class: "mx-2" %></li>
-            <li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <%= render 'shared/navbar' %>
     <!-- Fin Navbar -->
 
     <!-- Page Content -->
     <div id="content" class="bg-grey w-100">
-
       <div class="container-fluid">
         <div class="row">
           <!-- Tweets col -->
@@ -68,23 +23,18 @@
               <%= render @opinions_posts %>
             </div>
           </div>
-
           <!-- Fin Tweets col -->
 
           <!-- Who to follow col -->
           <div class="col">
             <div class="text-center">
               <h4>Who to follow</h4>
-
               <%= render @suggest_people %>
-
             </div>
           </div>
           <!-- Fin Who to follow col -->
         </div>
       </div>
-
     </div>
-
   </div>
 </div>

@@ -61,13 +61,14 @@
         <div class="row">
           <!-- Tweets col -->
           <div class="col-9">
-            <div class="text-center">
-              <h4>Opinions</h4>
-              
+            <div>
+              <h4 class="text-center">Opinions</h4>
+              <div>
+                <%= render @own_opinions %>
+              </div>
             </div>
             <div>
-              <h4>latest opinions</h4>
-              <%= test %>
+
             </div>
           </div>
 
@@ -76,9 +77,32 @@
           <!-- Who to follow col -->
           <div class="col">
             <div class="text-center">
-              <h4>Who to follow</h4>
+              <% if @user.avatar.attached? %>
+              <%= cl_image_tag @user2.avatar.key, :width=>150, :crop=>"fill" %>
+              <% end %>
+              <div class='d-flex flex-column w-100'>
+                <div class='d-flex justify-content-center align-items-center flex-column flex-md-row'>
+                </div>
+                <span class='align-self-center bold-name-right text-dark text-center mt-1'><%= @user2.fullname %></span>
+                <span class='align-self-center username text-center color-light-grey'>@<%= @user2.username %></span>
 
-              
+                <div class='d-flex flex-column flex-md-row'>
+                  <div class='border flex-grow-1'>
+                    <span class='text-center d-block font-weight-bolder'><%= @user2.opinions.count %></span>
+                    <span class='text-center d-block bold-flw color-light-grey'>Opinions</span>
+                  </div>
+                  <div class='border flex-grow-1'>
+                    <span class='text-center d-block font-weight-bolder'><%= @user2.followers.count %></span>
+                    <span class='text-center d-block bold-flw color-light-grey'>Following</span>
+                  </div>
+                  <div class='border flex-grow-1'>
+                    <span class='text-center d-block font-weight-bolder'><%= @user2.followed_users.count %></span>
+                    <span class='text-center d-block bold-flw color-light-grey'>Followers</span>
+                  </div>
+                </div>
+              </div>
+
+
 
             </div>
           </div>

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @user2 = User.find(params[:id])
+    @own_opinions = Opinion.where(author_id: @user2)
   end
 
   def new

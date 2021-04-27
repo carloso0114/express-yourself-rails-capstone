@@ -26,7 +26,7 @@ class OpinionsController < ApplicationController
   end
 
   def suggest_people
-    @suggest_people ||= current_user.follow_suggest.order('fullname ASC')
+    @suggest_people ||= current_user.follow_suggest.order('created_at DESC')
   end
 
   def opinion_params

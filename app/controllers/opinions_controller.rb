@@ -3,7 +3,6 @@ class OpinionsController < ApplicationController
 
   def home
     @user = current_user
-    @test = User.all
     @opinion = Opinion.new
     opinions_posts
     suggest_people
@@ -22,11 +21,11 @@ class OpinionsController < ApplicationController
   private
 
   def opinions_posts
-    @opinions_posts ||= current_user.follow_and_own_opinions.order("created_at DESC")
+    @opinions_posts ||= current_user.follow_and_own_opinions.order('created_at DESC')
   end
 
   def suggest_people
-    @people ||= current_user.follow_suggest.order("fullname ASC")
+    @suggest_people ||= current_user.follow_suggest.order('fullname ASC')
   end
 
   def opinion_params

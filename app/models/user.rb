@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :followerships, source: :followed
 
   validates :username, presence: true, uniqueness: true
-  validates :fullname, presence: true
+  validates :fullname, presence: true, length: { maximum: 10 }
 
   # trhows a list of users to follow
   def follow_suggest

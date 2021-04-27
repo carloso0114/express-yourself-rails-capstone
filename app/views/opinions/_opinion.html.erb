@@ -1,11 +1,11 @@
-  <div>
-    <div class='post-attribution'>
-      <%= link_to opinion.user.username, user_path(opinion.user), class: 'post-author' %>
-    </div>
-    <div class='post-liking'>
-      <span class='post-date'> <%= opinion.created_at.strftime("%Y/%m/%d") %> </span> <br>
-    </div>
+<div class='bg-white w-75 border rounded-border p-3 my-4 color-light-grey'>
+  <div class='post-attribution'>
+    <%= link_to opinion.user.username, user_path(opinion.user), class: 'post-author' %>
+  </div>
+  <div class='post-liking'>
+    <span class='post-date'> <%= opinion.created_at.strftime("%Y/%m/%d") %> </span> <br>
   </div>
   <p class="post-content">
     <%= opinion.text %>
   </p>
+</div>

@@ -24,6 +24,12 @@ a {
     color: var(--dark) !important;
 }
 
+body {
+    background-color: var(--grey) !important;
+}
+
+.nav-link { color: var(--grey) !important;}
+
 .bg-navbar { background-color: var(--blue) !important; }
 
 .bg-sidebar { background-color: var(--dark) !important; }

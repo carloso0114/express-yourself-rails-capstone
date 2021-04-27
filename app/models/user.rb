@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :opinions, foreign_key: 'author_id'
+  has_many :votes
 
   has_one_attached :avatar
   has_one_attached :cover
@@ -12,6 +13,7 @@ class User < ApplicationRecord
 
   # Who you follow
   has_many :followers, through: :followerships, source: :followed
+
 
   validates :username, presence: true, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 10 }

@@ -1,9 +1,17 @@
 <div class='bg-white w-75 border rounded-border p-3 my-4 color-light-grey'>
+
+        <% if opinion.user.avatar.attached? %>
+        <%= cl_image_tag(opinion.user.avatar.key, :width=>70, :height=>70, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto) %>
+        <% else %>
+        <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif", :width=>70, :height=>70, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto, :type=>"fetch") %>
+        <% end %>
   <div class='post-attribution'>
     <%= link_to opinion.user.username, user_path(opinion.user), class: 'post-author' %>
   </div>
   <div class='post-liking'>
     <span class='post-date'> <%= opinion.created_at.strftime("%Y/%m/%d") %> </span> <br>
+    <span style='font-size: 13px;'>Votes:<%= num_of_votes(opinion) %> </span>
+    <%= link_to('vote up', opinion_votes_path(opinion_id: opinion.id), method: :post) %>
   </div>
   <p class="post-content">
     <%= opinion.text %>

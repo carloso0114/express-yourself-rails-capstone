@@ -22,7 +22,6 @@ class OpinionsController < ApplicationController
 
   def opinions_posts
     @opinions_posts ||= current_user.follow_and_own_opinions.order('created_at DESC')
-    @picture ||= Opinion.where(author_id: @user)
   end
 
   def suggest_people

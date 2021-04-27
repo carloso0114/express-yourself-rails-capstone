@@ -14,7 +14,6 @@ class User < ApplicationRecord
   # Who you follow
   has_many :followers, through: :followerships, source: :followed
 
-
   validates :username, presence: true, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 10 }
 

@@ -15,20 +15,20 @@
  */
 
 :root {
-    --grey: #E1E8ED;
-    --blue: #1DA1F2;
-    --dark: #14171A;
+  --grey: #e1e8ed;
+  --blue: #1da1f2;
+  --dark: #14171a;
 }
 
 a {
-    color: var(--dark) !important;
+  color: var(--dark) !important;
 }
 
 body {
-    background-color: var(--grey) !important;
+  background-color: var(--grey) !important;
 }
 
-.nav-link { color: var(--grey) !important;}
+.nav-link { color: var(--grey) !important; }
 
 .bg-navbar { background-color: var(--blue) !important; }
 
@@ -37,15 +37,15 @@ body {
 .bg-grey { background-color: var(--grey) !important; }
 
 .sidebar-container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
-  
+
 @media (max-width: 768px) {
-    #sidebar-container {
-      display: none;
-    }
-    .stat {
-        border: 0;
-    }
+  #sidebar-container {
+    display: none;
   }
-  
+
+  .stat {
+    border: 0;
+  }
+}

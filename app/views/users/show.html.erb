@@ -17,8 +17,8 @@
           <!-- Tweets col -->
           <div class="col-9">
             <div>
-              <% if @user2.cover.attached? %>
-              <%= cl_image_tag @user2.cover.key, :width => 1200, :height => 200, :crop=>"fill" %>
+              <% if @user2.cover_image.attached? %>
+              <%= cl_image_tag @user2.cover_image.key, :width => 1200, :height => 200, :crop=>"fill" %>
               <% else %>
               <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg", :width => 1200, :height => 200, :type=>"fetch") %>
               <% end %>

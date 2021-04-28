@@ -31,4 +31,13 @@ RSpec.feature 'Opinion', type: :feature do
     click_link 'vote up'
     expect(page).to have_content('Votes:1')
   end
+
+  it 'user should not see the opinions of another user he does not follow' do
+    visit login_path
+    fill_in 'session[username]', with: 'user1'
+    click_button 'Log in'
+    expect(page).to have_no_content('This is my first post')
+  end
+
+
 end

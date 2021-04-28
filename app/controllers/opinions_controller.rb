@@ -11,7 +11,6 @@ class OpinionsController < ApplicationController
   def create
     @opinion = Opinion.new(opinion_params)
     if @opinion.save
-      flash[:success] = 'Opinion has been created!'
       redirect_to '/'
     else
       render 'new'

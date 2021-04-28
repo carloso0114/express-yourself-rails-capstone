@@ -14,6 +14,9 @@ You can vote up for opinions you like, to highlight how users care about one tho
 - Ruby version 3.0.0
 - Ruby on Rails 6.1.3
 
+## Live preview link
+- https://express-yourself-ror.herokuapp.com/
+
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 

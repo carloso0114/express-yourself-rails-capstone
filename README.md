@@ -15,6 +15,11 @@ You can vote up for opinions you like, to highlight how users care about one tho
 - Ruby version 3.0.0
 - Ruby on Rails 6.1.3
 
+## Screenshot
+
+![Screenshot Main Page](https://res.cloudinary.com/hostingfreeplease/image/upload/v1619647848/photo_yzeoqs.png)
+
+
 ## Live preview link
 
 - <https://express-yourself-ror.herokuapp.com/>

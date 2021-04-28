@@ -6,5 +6,5 @@ RSpec.describe Opinion, type: :model do
   it { should validate_presence_of(:text) }
   it do
     should validate_length_of(:text).is_at_least(1).on(:create)
-    end
+  end
 end

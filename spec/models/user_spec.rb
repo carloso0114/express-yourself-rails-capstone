@@ -13,9 +13,9 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:username) }
   it do
     should validate_length_of(:username).is_at_least(1).on(:create)
-    end
+  end
   it { should validate_presence_of(:fullname) }
   it do
     should validate_length_of(:fullname).is_at_least(1).on(:create)
-    end
+  end
 end

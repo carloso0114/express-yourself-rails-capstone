@@ -1,0 +1,29 @@
+<div class="bg-sidebar nav-link sidebar-container">
+    <div class="text-center">
+        <% if @user.photo.attached? %>
+        <%= cl_image_tag(@user.photo.key, :width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto) %>
+        <% else %>
+        <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif", :width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto, :type=>"fetch") %>
+        <% end %>
+        <div class='d-flex flex-column w-100'>
+            <div class='d-flex justify-content-center align-items-center flex-column flex-md-row'>
+            </div>
+            <span class='align-self-center bold-name-right text-center mt-1'><%= @user.fullname %></span>
+            <span class='align-self-center username text-center color-light-grey'>@<%= @user.username %></span>
+
+            <div class='d-flex flex-column flex-md-row'>
+                <div class='border flex-grow-1'>
+                    <span class='text-center d-block font-weight-bolder'><%= @user.followers.count %></span>
+                    <span class='text-center d-block bold-flw color-light-grey'>Following</span>
+                </div>
+                <div class='border flex-grow-1'>
+                    <span class='text-center d-block font-weight-bolder'><%= @user.followed_users.count %></span>
+                    <span class='text-center d-block bold-flw color-light-grey'>Followers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a href="/" class="d-block nav-link border-0"><i class="icon ion-md-apps lead mr-2"></i>Home</a>
+    </div>
+</div>
